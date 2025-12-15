@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-hola-mundo-service
+spec:
+  type: NodePort
+  selector:
+    app: app-hola-mundo
+  ports:
+    - port: 80
+      targetPort: 3000

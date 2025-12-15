@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-hola-mundo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-hola-mundo
+  template:
+    metadata:
+      labels:
+        app: app-hola-mundo
+    spec:
+      containers:
+      - name: app-hola-mundo
+        image: rmunerap/app-hola-mundo:latest
+        ports:
+        - containerPort: 3000

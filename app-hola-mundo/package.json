@@ -1,0 +1,13 @@
+{
+  "name": "app-hola-mundo",
+  "version": "1.0.0",
+  "description": "Aplicación Hola Mundo para prueba DevOps",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

@@ -1,0 +1,37 @@
+trigger:
+- develop
+- master
+
+variables:
+- group: dockerhub-creds
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: azure-pipelines-templates
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+- stage: Build
+  displayName: Build & Test
+  jobs:
+  - job: Build
+    steps:
+    - template: build.yml@templates
+
+- stage: Docker
+  displayName: Docker Build & Push
+  jobs:
+  - job: Docker
+    steps:
+    - template: docker.yml@templates
+
+- stage: Deploy
+  displayName: Deploy to Kubernetes
+  jobs:
+  - job: Deploy
+    steps:
+    - template: deploy.yml@templates
