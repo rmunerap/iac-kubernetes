@@ -1,0 +1,10 @@
+trigger:
+- develop
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: |
+    kubectl apply -f k8s/
+  displayName: 'Deploy Kubernetes IaC'
