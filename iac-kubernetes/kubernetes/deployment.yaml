@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-hola-mundo
+  name: hola-mundo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app-hola-mundo
+      app: hola-mundo
   template:
     metadata:
       labels:
-        app: app-hola-mundo
+        app: hola-mundo
     spec:
       containers:
-      - name: app-hola-mundo
-        image: rmunerap/app-hola-mundo:latest
+      - name: hola-mundo
+        image: nginx
         ports:
-        - containerPort: 3000
+        - containerPort: 80
