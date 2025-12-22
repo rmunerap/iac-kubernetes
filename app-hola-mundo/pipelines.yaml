@@ -3,13 +3,15 @@ trigger:
 - master
 
 variables:
-- group: dockerhub-creds
+- group: dockerhub
 
 resources:
   repositories:
     - repository: templates
-      type: git
-      name: azure-pipelines-templates
+      type: github
+      name: rmunerap/pipelines-templates
+      ref: refs/heads/develop
+      endpoint: github-connection
 
 pool:
   vmImage: ubuntu-latest
